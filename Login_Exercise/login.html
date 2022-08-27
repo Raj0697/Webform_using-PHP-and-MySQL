@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>login</title>
+</head>
+<script type="text/javascript">
+function val()
+{
+	if(document.getElementById("txtemail").value=="")
+	{
+		alert("enter the email");
+		return false;
+	}
+	else if(document.getElementById("txtpassword").value=="")
+	{
+		alert("enter the password");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+	
+	
+}
+</script>
+<body>
+<center>
+<form id="frmlogin" name="frmlogin" method="post" action="login.php" onsubmit="return val(document.frmlogin);">
+<table border="0" cellpadding="0" cellspacing="0" width="40%">
+<th colspan="2"><h1>LOGIN</h1></th>
+<tr>
+<td align="right" width="50%">
+Emailid:&ensp;
+</td>
+<td><input type="email" id="txtemail" name="txtemail"></td>
+</tr>
+<tr>
+<td align="right">
+Password:&ensp;</td>
+<td><input type="password" id="txtpassword" name="txtpassword"></td></tr>
+<tr><td colspan="2">&ensp;</td>
+
+</tr>
+<tr>
+<td align="right">
+<input type="submit" id="cmdsubmit" name="cmdsubmit" value="submit">&ensp;
+</td>
+<td>
+<input type="reset" >
+</td></table>
+</form>
+</center>
+</body>
+</html>
