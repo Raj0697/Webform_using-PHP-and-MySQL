@@ -1,0 +1,41 @@
+<?php
+
+$id=$_POST['wid'];
+$name=$_POST['na'];
+$address=$_POST['add'];
+$city=$_POST['cit'];
+$pin=$_POST['pi'];
+$type=$_POST['typ'];
+$reading=$_POST['rea'];
+$amount=$_POST['am'];
+
+if(!empty($id) && !empty($name) && !empty($address) && !empty($city) && !empty($pin) && !empty($type) && !empty($reading) && !empty($amount))
+{
+	try
+	{
+		
+		$conn = new mysqli("localhost","root","","water_supply");
+		if(mysqli_connect_error())
+		{
+			die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
+		}
+		else
+		{
+			$insert = "insert into water (id,name,address,city,pin,type,reading,amount) values(?, ?, ?, ?, ?, ?, ?, ?)";
+			$stmt = $conn->prepare($insert);
+			$stmt->bind_Param("isssisii",$id,$name,$address,$city,$pin,$type,$reading,$amount);
+			$stmt->execute();
+			$stmt->close();
+			echo"success";
+		}
+		$conn->close();
+	}
+	catch(Exception $e)
+	{
+		echo"$e->getMessage();";
+	}
+}
+else
+{
+	echo"some of the fields are not empty";
+}
