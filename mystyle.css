@@ -1,0 +1,22 @@
+<style>
+#button
+{
+	width:10em;
+	border:5px solid blue;
+	background:lavendar;
+	border-radius:18px;
+}
+a
+{
+	display:block;
+	width:100%;
+	text-align:center;
+	line-height:2em;
+	text-decoration:none;
+}
+a:hover
+{
+	color:white;
+	background:royalblue;
+}
+</style>
