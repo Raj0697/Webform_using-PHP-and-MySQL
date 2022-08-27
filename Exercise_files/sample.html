@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>mcc</title>
+</head>
+<script type="text/javascript">
+function val()
+{
+	var text = "";
+	if(document.getElementById("nam").value=="")
+	{
+		alert("Enter the id!!");
+		return false;
+	}
+	else if(document.getElementById("s1").checked==false && document.getElementById("s2").checked==false)
+	{
+		alert("select the gender");
+		return false;
+	}
+	else if(document.getElementById("e1").checked==false && document.getElementById("e2").checked==false)
+	{
+		alert("select the education");
+		return false;
+	}
+	else if(document.getElementById("a1").value=="")
+	{
+		alert("enter the address");
+		return false;
+	}
+	else if(document.getElementById("e1").checked==true || document.getElementById("e2").checked==true)
+	{
+		if(document.getElementById("e1").checked==true)
+			text+=" "+document.getElementById("e1").value;
+		if(document.getElementById("e2").checked==true)
+			text+=" "+document.getElementById("e2").value;
+		document.raj.temp.value=text;
+		alert(text);
+		}
+			
+			
+	else if(document.getElementById("m1").selectedIndex==0)
+	{
+		alert("select the marital");
+		return false;
+	}	
+	else
+	{
+		return true;
+	}
+}	
+		
+
+
+</script>
+<body>
+<center>
+<h1>insert</h1>
+<form name="raj" action="insert.php" method="post" onsubmit="return val();">
+<table border="1" cellpadding="10" cellspacing="5">
+<tr>
+<td>id:</td>
+<td><input type="text" name="na" id="nam"/></td>
+</tr>
+<tr>
+<td>gender:</td>
+<td><input type="radio" name="sex" id="s1" value="male">male
+<input type="radio" name="sex" id="s2" value="female">female</td>
+</tr>
+<tr>
+<td>edu</td>
+<td><input type="checkbox" name="educ" id="e1" value="ug">ug
+<input type="checkbox" name="educ" id="e2" value="pg">pg
+</td></tr>
+<tr>
+<td>address</td>
+<td><textarea rows="3" cols="30" name="add" id="a1"></textarea></td></tr>
+<tr>
+<td>marital</td>
+<td><select name="mar" id="m1">
+<option value="select">select</option>
+<option value="single">single</option>
+<option value="married">married</option>
+</select>
+</td></tr>
+</table>
+<br>
+<input type="submit" value="insert">&ensp;&ensp;
+<input type="reset" value="clear">
+<input type="hidden" name="temp">
+</form>
+</center>
+</body>
+</html>
+
+
+
