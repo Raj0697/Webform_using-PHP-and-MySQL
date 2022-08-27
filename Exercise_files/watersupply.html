@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>water</title>
+</head>
+<script type="text/javascript">
+function calc()
+{
+
+	var pre = document.getElementById("read").value;
+	var cur = document.getElementById("cr1").value;
+
+	var fin-read = cur-pre;
+	
+	var amoun = document.getElementById("amt").value;
+	
+	document.getElementById("final").value = fin_read;
+	
+	if(document.getElementById("typ1").checked==0)
+	{
+		if(fin_read	<100)
+		{
+			amoun = fin_read * 2;
+		}
+		else
+		{
+			amoun = fin_read * 3;
+		}
+	}
+	document.getElementById("amt").value=amoun;
+
+}
+</script>
+<body bgcolor="wheat">
+<center>
+<h1>water supply billing system</h1>
+<form name="raj" action="water_insert.php" method="post">
+<table border="10" cellpadding="10" cellspacing="5" bgcolor="white" style="border-color:blue;">
+<tr>
+<td>id:</td>
+<td><input type="text" name="wid" id="waid" size="20" ></td></tr>
+
+<tr><td>name:</td><td><input type="text" name="na" id="nam" size="20"></td></tr>
+
+<tr><td>address</td><td><textarea rows="3" cols="30" name="add" id="addr"></textarea></td></tr>
+
+<tr><td>city:</td><td><input type="text" name="cit" id="ci" size="20"></td></tr>
+
+<tr><td>pin:</td><td><input type="text" name="pi" id="wpin" size="20"></td></tr>
+
+<tr><td>type:</td><td><input type="radio" name="typ" id="typ1" value="domestic">domestic
+<input type="radio" name="typ" id="typ2" value="commercial">commercial
+<input type="radio" name="typ" id="typ3" value="industrial">industrial</td></tr>
+
+<tr><td>previous reading:</td><td><input type="text" name="rea" id="read" size="20"></td></tr>
+
+<tr><td>current reading:</td><td><input type="text" name="cr" id="cr1" size="20">
+&ensp;&ensp;
+<input type="button" value="calculate" name="but" style="border:none"; onclick="return calc();"></td></tr>
+
+<tr><td>final reading:</td><td><input type="text" name="fin" id="final" size="20"></td></tr>
+
+<tr><td>amount:</td><td><input type="text" name="am" id="amt" size="20"></td></tr>
+
+</table>
+<br><br>
+<input type="submit" value="insert"/>&ensp;&ensp;
+<input type="reset" value="startover"/>
+</form>
+</center>
+</body>
+</html>
