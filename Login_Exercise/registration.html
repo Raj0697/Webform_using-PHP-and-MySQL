@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>registration</title>
+</head>
+<script type="text/javascript" language="javascript">
+
+function validateRegistration()
+{
+	if(document.getElementById("txtfname").value=="")
+	{
+		alert("enter first name");
+		return false;
+	}
+	else if(document.getElementById("txtlname").value=="")
+	{
+		alert("enter last name");
+		return false;
+	}
+	else if(document.getElementById("txtemail").value=="")
+	{
+		alert("enter email");
+		return false;
+	}
+	else if(document.getElementById("txtpassword").value=="")
+	{
+		alert("enter password");
+		return false;
+	}
+	else if(document.getElementById("txtconfpassword").value=="")
+	{
+		alert("enter confirm password");
+		return false;
+	}
+	else if(document.getElementById("txtpassword").value!=document.getElementById("txtconfpassword").value)
+	{
+		alert("password and confirm password doesn't match");
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+	
+</script>
+<body>
+<center>
+<form id="frmRegistration" name="frmRegistration" method="post" action="registration.php" 
+onsubmit="return validateRegistration(document.frmRegistration);">
+<table border="0" cellspacing="0" cellpadding="0" width="40%">
+<th colspan="2"><h1>Registration Form</h1></th>
+<tr>
+	<td align="right" width="50%">first name:&nbsp;</td>
+	<td><input type="text" id="txtfname" name="txtfname" tabindex="10"/></td>
+</tr>
+<tr>
+	<td align="right">last name:&nbsp;</td>
+	<td><input type="text" id="txtlname" name="txtlname"/></td>
+</tr>
+<tr>
+	<td align="right">email:&nbsp;</td>
+	<td><input type="email" id="txtemail" name="txtemail"/></td>
+</tr>
+<tr>
+	<td align="right">password:&ensp;</td>
+	<td><input type="password" id="txtpassword" name="txtpassword"/></td>
+</tr>
+<tr>
+	<td align="right">confirm password:&nbsp;</td>
+	<td><input type="password" id="txtconfpassword" name="txtconfpassword"/></td>
+</tr>
+<tr>
+	<td colspan="2">&nbsp;</td>  
+</tr>
+<tr>	
+	<td align="right"><input type="submit" id="cmdsubmit" name="cmdsubmit" value="submit"/>&nbsp;</td>
+	<td><input type="reset" id="cmdreset" name="cmdreset"/></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
